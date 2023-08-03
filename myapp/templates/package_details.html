@@ -1,0 +1,51 @@
+{% extends 'seller_header.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="hero hero-inner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mx-auto text-center">
+          <div class="intro-wrap">
+            <h1 class="mb-0">Package Details</h1>
+            <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <div class="untree_co-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="owl-single dots-absolute owl-carousel">
+            <img src="{{ package.pimage.url }}" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
+          </div>
+        </div>
+        <div class="col-lg-5 pl-lg-5 ml-auto">
+          <h2 class="section-title mb-4">About {{package.pname}}</h2>
+          <p>{{package.description}}</p>
+          <ul class="list-unstyled two-col clearfix">
+            <li>Destination : {{package.destination}}</li>
+            <li>Price : {{package.price}}</li>
+            <li>Starts From : {{package.start_date}}</li>
+            <li>Transport Option : {{package.t_option}}</li>
+            <li>Other Services : {{package.other_services}}</li>
+            <li>Duration : {{package.duration}}</li>
+          </ul>
+
+          <p><a href="{% url 'more_images' pk=package.pk %}" class="btn btn-primary">Add More Images</a></p>
+          <p><a href="{% url 'update_package' pk=package.pk %}" class="btn btn-primary">Update Package</a></p>
+          <p><a href="{% url 'delete_package' pk=package.pk %}" class="btn btn-danger">Delete Package</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+{% endblock %}
